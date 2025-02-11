@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação de Vendas no WhatsApp - DSC Group</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Barra Superior */
+        .top-bar {
+            background-color: #000024;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar .logo img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        /* Menu Hambúrguer */
+        nav {
+            background-color: #000024;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding-top: 50px;
+        }
+
+        nav.active {
+            left: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            color: #fd1f26;
+        }
+
+        /* Estilo da Página */
+        .container {
+            background-color: #ff890a;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .video-section {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 5px;
+        }
+
+        .material-link {
+            margin-top: 10px;
+            display: block;
+            color: #fd1f26;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .material-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Botão do Menu */
+        .menu-button {
+            display: block;
+            font-size: 2rem;
+            color: white;
+            background-color: transparent;
+            border: none;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #000024;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            .video-container iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior com Logo -->
+    <div class="top-bar">
+        <div class="logo">
+            <img src="Assets/Logo 03 (1).png" alt="Logo DSC - Group">
+        </div>
+        <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+    </div>
+
+    <!-- Menu Hambúrguer -->
+    <nav id="menu">
+        <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="#">Vendas no WhatsApp</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Logística</a></li>
+            <li><a href="#">Entrega</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <h1 class="section-title">Formação de Vendas no WhatsApp</h1>
+        <P></P>
+
+        <!-- Loop para 10 vídeos -->
+        <script>
+            let videos = [
+                { titulo: "Fase 01 - Introdução", id: "SEU_VIDEO_ID_1", material: "https://material1.com" },
+                { titulo: "Fase 02 - Técnicas de Abordagem", id: "SEU_VIDEO_ID_2", material: "https://material2.com" },
+                { titulo: "Fase 03 - Como Converter Clientes", id: "SEU_VIDEO_ID_3", material: "https://material3.com" },
+                { titulo: "Fase 04 - Estratégias Avançadas", id: "SEU_VIDEO_ID_4", material: "https://material4.com" },
+                { titulo: "Fase 05 - Uso de Scripts", id: "SEU_VIDEO_ID_5", material: "https://material5.com" },
+                { titulo: "Fase 06 - Fechamento de Vendas", id: "SEU_VIDEO_ID_6", material: "https://material6.com" },
+                { titulo: "Fase 07 - Como Lidar com Objeções", id: "SEU_VIDEO_ID_7", material: "https://material7.com" },
+                { titulo: "Fase 08 - Criando Relacionamento", id: "SEU_VIDEO_ID_8", material: "https://material8.com" },
+                { titulo: "Fase 09 - Pós-Venda e Fidelização", id: "SEU_VIDEO_ID_9", material: "https://material9.com" },
+                { titulo: "Fase 10 - Acelerando Resultados", id: "SEU_VIDEO_ID_10", material: "https://material10.com" },
+            ];
+
+            videos.forEach(video => {
+                document.write(`
+                    <div class="video-section">
+                        <h2>${video.titulo}</h2>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/${video.id}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <a href="${video.material}" class="material-link" target="_blank">Baixar Material da Aula</a>
+                    </div>
+                `);
+            });
+        </script>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>DSC - Group | Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Função para abrir/fechar o menu
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
